@@ -1,8 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {sendSmurfs} from '../actions'
+
 
 export const SmurfForm = props => {
     const handleChange = e => {
-        
+        e.preventDefault();
     }
 
     return (
@@ -32,11 +35,26 @@ export const SmurfForm = props => {
                 placeholder='Height in cm'
                 value={props.height}
                 />
+                <button onSubmit={props.sendSmurfs}>Add That Smurf</button>
             </div>
         </div>
     )
-
-
 }
+
+
+const mapStateToProps = state => {
+    return {
+        isLoading: state.isLoading,
+        smurfReceived: state.smurfReceived,
+        error: state.error,
+        smurfOut: state.smurfOut,
+        newSmurf: state.newSmurf
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {sendSmurfs}
+    )(SmurfForm);
 
 

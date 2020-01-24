@@ -6,7 +6,7 @@ const initialState = {
         name: '',
         age: '',
         height: '',
-        id: Date.now();
+        id: Date.now()
     }
     
 };
@@ -33,7 +33,7 @@ export const reducer = (state = initialState, action) => {
                 return {
                     ...state,
                     isLoading: false,
-                    newSmurf: action.payload
+                    smurfReceived: [...state, action.payload]
                 }
         
         default:

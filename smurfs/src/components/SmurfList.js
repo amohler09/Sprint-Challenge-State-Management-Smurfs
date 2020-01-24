@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { fetchSmurfs } from '../actions'
-import { sendSmurfs } from '../actions'
-import { SmurfForm } from './smurfForm'
 
 
 const SmurfList = props => {
@@ -18,7 +16,6 @@ const SmurfList = props => {
                     <p>{item.height} tall</p>
                 </div>
             ))}
-            <SmurfForm />
             
         </div>
     )
@@ -36,8 +33,8 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    {fetchSmurfs, sendSmurfs}
-    )(SmurfList, SmurfForm);
+    {fetchSmurfs}
+    )(SmurfList);
 
 
     // {props.smurfReceived && !props.isLoading && (
