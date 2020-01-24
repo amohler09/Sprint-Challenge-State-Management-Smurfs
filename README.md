@@ -23,10 +23,21 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+  -Context API helps solve the problem of prop-drilling when you need to pass props more than 2 levels down, or if you have many props that you need to pass more than 2 levels down.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+  -Actions-Actions are just plain JavaScript objects that contain information and pass it to the store. They are the only possible way that information can be passed to the store and they have a type field that tells the store what type of action to perfrom
+  -Reducers-Reducers are pure functions that take in the current state and action and return a new state which tells the store exactly how to perform the action given
+  -Store-Store is an object that holds all of the state of the application
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  -Application state is global and your component state is local. Component state, however, lives within that specific component and props can be passed down to only it's children. So, if you need a state which can be accessed by multiple components, it's better to store your state in the Application.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+  -Redux-thunk is a middleware that allows you to call action creators and return a function as opposed to an object. It changes the normal flow of an application so that errors do not get thrown.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+  -I think it's a little hard to say which I prefer more, I believe context API is simpler for smaller applications but I think I might like Redux more because although there are many more steps and code involved, it seems like there is a more clear path as to how things get passed and where all the state lives.
 
 ## Project Set Up
 
