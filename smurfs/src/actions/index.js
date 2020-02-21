@@ -9,9 +9,9 @@ export const getSmurfs = () => dispatch => {
     .catch(err => console.log('error fetching smurfs', err))
 }
 
-export const addSmurf = () => dispatch => {
+export const addSmurf = smurf => dispatch => {
     dispatch({ type: 'SENDING_SMURFS'})
-    axios.post('http://localhost:3333/smurfs')
+    axios.post('http://localhost:3333/smurfs', smurf)
     .then(res => {
         dispatch({ type: 'SMURF_OUT', payload: res.data})
     })

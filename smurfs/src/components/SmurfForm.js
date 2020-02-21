@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { addSmurf } from '../actions'
 
 const SmurfForm = props => {
-    //if something doesn't work try putting useState in an array
     const [smurfInput, setSmurfInput] = useState([{
         name: '',
         age: '',
@@ -13,7 +12,7 @@ const SmurfForm = props => {
 
     const handleChange = e => {
         console.log('name:', e.target.name, 'value:', e.target.value);
-        setSmurfInput({...smurfInput, [e.target.name] : e.target.value});
+        setSmurfInput({...smurfInput, [e.target.name] : e.target.value });
     }
 
     const handleSubmit = e => {
@@ -29,11 +28,11 @@ const SmurfForm = props => {
 
     return (
         <div className='smurf-form'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input 
                 className='smurf-input'
                 type='text'
-                value={smurfInput.name}
+                value={smurfInput.name || ''}
                 name='name'
                 placeholder='Name'
                 onChange={handleChange}
@@ -42,7 +41,7 @@ const SmurfForm = props => {
                 <input
                 className='smurf-input'
                 type='text'
-                value={smurfInput.age}
+                value={smurfInput.age || ''}
                 name='age'
                 placeholder='Age'
                 onChange={handleChange} 
@@ -51,13 +50,13 @@ const SmurfForm = props => {
                 <input
                 className='smurf-input'
                 type='text'
-                value={smurfInput.height}
+                value={smurfInput.height || ''}
                 name='height'
                 placeholder='Height (in CM)'
                 onChange={handleChange} 
                 />
 
-                <button className='smurf-btn' onClick={handleSubmit}>Add A Smurf To The Village!</button>
+                <button className='smurf-btn'>Add A Smurf To The Village!</button>
             </form>
         </div>
     )
