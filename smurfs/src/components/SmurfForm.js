@@ -27,8 +27,7 @@ const SmurfForm = props => {
     }
 
     return (
-        <div className='smurf-form'>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='smurf-form'>
                 <input 
                 className='smurf-input'
                 type='text'
@@ -58,7 +57,6 @@ const SmurfForm = props => {
 
                 <button className='smurf-btn'>Add A Smurf To The Village!</button>
             </form>
-        </div>
     )
 }
 
