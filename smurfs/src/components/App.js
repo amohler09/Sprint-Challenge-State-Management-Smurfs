@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import {SmurfList} from './SmurfList'
+import SmurfList from './SmurfList'
 
 
 const App = () => {
